@@ -3,176 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preserve o Rio Paraná | Conscientização & Acessibilidade por Voz</title>
-    
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- External CSS -->
+    <title>Salve o Rio Paraná | Conscientização Ambiental</title>
     <link rel="stylesheet" href="estilo.css">
+    <!-- Ícones FontAwesome para visual rico -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Toast de Notificação -->
-    <div id="toast" class="toast" role="status" aria-live="polite">
-        Comando de voz ativado!
+    <!-- Barra de Controle de Acessibilidade por Voz -->
+    <div class="voice-bar">
+        <button id="btn-voice" class="btn-voice">
+            <i class="fa-solid fa-microphone">
+            <span>Ativar Comandos de Voz</span>
+        </button>
+        <div id="voice-status" class="voice-status">Microfone desligado</div>
     </div>
 
-    <!-- Cabeçalho e Navegação -->
-    <header>
-        <nav class="nav-container">
-            <a href="#inicio" class="logo">
-                <i class="fa-solid fa-water"></i> EcoParaná
-            </a>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#importancia">Importância</a></li>
-                <li><a href="#poluentes">Poluição</a></li>
-                <li><a href="#impactos">Impactos</a></li>
-                <li><a href="#solucoes">Ações</a></li>
-            </ul>
+    <!-- Cabeçalho / Navegação -->
+    <header class="header">
+        <div class="logo">
+            <i class="fa-solid fa-water"></i> EcoRio Paraná
+        </div>
+        <nav class="nav">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">O Rio</a>
+            <a href="#impactos">Impactos</a>
+            <a href="#ajudar">Como Ajudar</a>
         </nav>
     </header>
 
-    <!-- Seção Principal (Hero) -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-text">
-            <h1>Salve o Rio Paraná: Acessibilidade e Conscientização</h1>
-            <p>
-                O Rio Paraná é uma das maiores bacias hidrográficas da América do Sul, sustentando a biodiversidade, geração de energia e abastecimento para milhões de pessoas. Infelizmente, a contaminação e o descarte inadequado de resíduos colocam esse ecossistema vital em permanente risco.
-            </p>
-            <p class="accessibility-note">
-                ♿ Esta página foi projetada com Navegação por Comandos de Voz para proporcionar autonomia total a pessoas com deficiência motora severa.
-            </p>
-        </div>
-        <div class="hero-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/5722966090079485957_0" alt="Vista panorâmica do Rio Paraná" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Preservar o Rio Paraná é Proteger o Nosso Futuro</h1>
+            <p>O segundo maior rio da América do Sul pede socorro. Descubra como a poluição afeta a biodiversidade e o que podemos fazer juntas e juntos.</p>
+            <a href="#sobre" class="btn-primary">Saiba Mais</a>
         </div>
     </section>
 
-    <!-- Tutorial e Teste de Comandos de Voz -->
-    <section id="comandos-voz" class="voice-tutorial">
-        <h2><i class="fa-solid fa-microphone-lines"></i> Navegação por Comandos de Voz</h2>
-        <p>Ative o microfone na barra inferior ou clique em um dos atalhos abaixo para testar os comandos hands-free:</p>
-        
-        <div class="command-chips">
-            <button class="chip" onclick="executeCommand('rolar para baixo')"><i class="fa-solid fa-arrow-down"></i> "Rolar para baixo"</button>
-            <button class="chip" onclick="executeCommand('rolar para cima')"><i class="fa-solid fa-arrow-up"></i> "Rolar para cima"</button>
-            <button class="chip" onclick="executeCommand('ir para a poluição')"><i class="fa-solid fa-triangle-exclamation"></i> "Ir para Poluição"</button>
-            <button class="chip" onclick="executeCommand('ir para impactos')"><i class="fa-solid fa-fish-fins"></i> "Ir para Impactos"</button>
-            <button class="chip" onclick="executeCommand('ir para ações')"><i class="fa-solid fa-hand-holding-hand"></i> "Ir para Ações"</button>
-            <button class="chip" onclick="executeCommand('modo escuro')"><i class="fa-solid fa-moon"></i> "Modo escuro"</button>
-            <button class="chip" onclick="executeCommand('modo claro')"><i class="fa-solid fa-sun"></i> "Modo claro"</button>
-            <button class="chip" onclick="executeCommand('ler página')"><i class="fa-solid fa-volume-high"></i> "Ler página"</button>
-            <button class="chip" onclick="executeCommand('parar leitura')"><i class="fa-solid fa-circle-stop"></i> "Parar leitura"</button>
-            <button class="chip" onclick="executeCommand('topo')"><i class="fa-solid fa-angles-up"></i> "Ir para o topo"</button>
-        </div>
+    <!-- Painel de Dicas de Voz -->
+    <section class="voice-instructions">
+        <h3><i class="fa-solid fa-bullhorn"></i> Comandos de Voz Disponíveis:</h3>
+        <ul>
+            <li><strong>"Rolar para baixo"</strong> ou <strong>"Descer"</strong></li>
+            <li><strong>"Rolar para cima"</strong> ou <strong>"Subir"</strong></li>
+            <li><strong>"Ir para início"</strong></li>
+            <li><strong>"Ir para impactos"</strong></li>
+            <li><strong>"Ir para como ajudar"</strong></li>
+        </ul>
     </section>
 
-    <!-- Seção: Importância -->
-    <section id="importancia" class="content-section">
-        <h2 class="section-title"><i class="fa-solid fa-seedling"></i> A Importância do Rio Paraná</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <i class="fa-solid fa-network-wired card-icon"></i>
-                <h3>Segunda Maior Bacia</h3>
-                <p>Com mais de 4.800 km de extensão, conecta ecossistemas cruciais no Brasil, Paraguai e Argentina.</p>
+    <!-- Seção: Sobre o Rio -->
+    <section id="sobre" class="section">
+        <div class="container grid-2">
+            <div class="text-content">
+                <h2>A Importância do Rio Paraná</h2>
+                <p>Com mais de 4.000 km de extensão, o Rio Paraná é vital para o abastecimento de água, geração de energia hidroelétrica, pesca e subsistência de milhares de comunidades ao longo de sua bacia.</p>
+                <p>No entanto, o descarte irregular de esgoto, resíduos plásticos e o efluente agrícola vêm ameaçando severamente a qualidade de suas águas e a sobrevivência de espécies nativas.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-bolt card-icon"></i>
-                <h3>Geração de Energia</h3>
-                <p>Abriga a Usina Hidrelétrica de Itaipu, fornecendo energia limpa e renovável para milhões de lares e indústrias.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-faucet-drip card-icon"></i>
-                <h3>Biodiversidade & Vida</h3>
-                <p>Fonte essencial de água potável e lar de espécies como Dourado, Pintado e ampla biodiversidade nativa.</p>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Rio caudaloso cercado por vegetação">
             </div>
         </div>
     </section>
 
-    <!-- Seção: Poluentes -->
-    <section id="poluentes" class="content-section">
-        <h2 class="section-title"><i class="fa-solid fa-circle-exclamation"></i> Fontes de Poluição</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <i class="fa-solid fa-flask-vial card-icon"></i>
-                <h3>Agrotóxicos e Fertilizantes</h3>
-                <p>O escoamento das lavouras carrega defensivos agrícolas para a calha do rio, desequilibrando o ecossistema aquático.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-toilet card-icon"></i>
-                <h3>Esgoto Não Tratado</h3>
-                <p>Lançamento de efluentes urbanos sem tratamento prévio reduz a oxigenação da água e dissemina patógenos.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-dumpster card-icon"></i>
-                <h3>Resíduos Plásticos</h3>
-                <p>Lixo descartado de forma inadequada acumula-se nas margens e degrada-se em microplásticos altamente nocivos.</p>
+    <!-- Seção: Impactos da Poluição -->
+    <section id="impactos" class="section bg-light">
+        <div class="container">
+            <h2 class="title-center">Impactos da Poluição</h2>
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&w=600&q=80" alt="Lixo plástico na água">
+                    <div class="card-body">
+                        <h3><i class="fa-solid fa-bottle-water"></i> Acúmulo de Plástico</h3>
+                        <p>Toneladas de resíduos plásticos descartados incorretamente chegam ao leito do rio, afetando peixes e aves aquáticas.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Agropecuária e áreas verdes">
+                    <div class="card-body">
+                        <h3><i class="fa-solid fa-flask"></i> Defensivos Agrícolas</h3>
+                        <p>O escoamento de pesticidas contaminam os aquíferos locais e causam a mortandade de animais e desequilíbrio na flora.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80" alt="Água de rio turva">
+                    <div class="card-body">
+                        <h3><i class="fa-solid fa-skull-crossbones"></i> Esgoto Não Tratado</h3>
+                        <p>A proliferação de bactérias nocivas reduz os níveis de oxigênio na água, tornando regiões do rio biologicamente mortas.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Seção: Impactos -->
-    <section id="impactos" class="content-section">
-        <h2 class="section-title"><i class="fa-solid fa-fish-fins"></i> Impactos Socioambientais</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <i class="fa-solid fa-skull-crossbones card-icon"></i>
-                <h3>Mortandade da Fauna</h3>
-                <p>Toxinas acumuladas provocam mortandade de peixes e comprometem a reprodução das espécies fluviais.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-users-slash card-icon"></i>
-                <h3>Comunidades Ribeirinhas</h3>
-                <p>Famílias e pescadores artesanais perdem sua principal fonte de alimento, renda e água própria para consumo.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-biohazard card-icon"></i>
-                <h3>Metais Pesados</h3>
-                <p>Descartes industriais irresponsáveis bioacumulam-se na cadeia alimentar, trazendo riscos graves à saúde pública.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção: Soluções / Ações -->
-    <section id="solucoes" class="content-section">
-        <h2 class="section-title"><i class="fa-solid fa-hand-holding-heart"></i> Ações de Preservação</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <i class="fa-solid fa-tree card-icon"></i>
-                <h3>Restauração de Matas Ciliares</h3>
-                <p>O reflorestamento das margens atua como um filtro natural contra sedimentos e defensivos agrícolas.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-filter card-icon"></i>
-                <h3>Saneamento Integral</h3>
-                <p>Exigir ampliação do tratamento de esgoto e fiscalização rigorosa sobre descartes industriais e urbanos.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-bullhorn card-icon"></i>
-                <h3>Educação e Denúncia</h3>
-                <p>Engajar a comunidade em mutirões de limpeza, consumo consciente e denúncias de crimes ambientais.</p>
+    <!-- Seção: Como Ajudar -->
+    <section id="ajudar" class="section">
+        <div class="container text-center">
+            <h2>Como Você Pode Fazer a Diferença</h2>
+            <div class="actions-grid">
+                <div class="action-item">
+                    <i class="fa-solid fa-recycle icon-action"></i>
+                    <h4>Descarte Correto</h4>
+                    <p>Nunca jogue lixo na rua ou em canais de drenagem. Separe o lixo reciclável.</p>
+                </div>
+                <div class="action-item">
+                    <i class="fa-solid fa-seedling icon-action"></i>
+                    <h4>Apoie ONGs</h4>
+                    <p>Participe ou apoie iniciativas locais de reflorestamento de matas ciliares.</p>
+                </div>
+                <div class="action-item">
+                    <i class="fa-solid fa-users icon-action"></i>
+                    <h4>Conscientize</h4>
+                    <p>Compartilhe esta causa com amigos, familiares e em suas redes sociais.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Barra de Controle de Voz Fixa no Rodapé -->
-    <div class="voice-bar">
-        <div class="voice-status">
-            <span id="status-icon"><i class="fa-solid fa-microphone-slash"></i></span>
-            <span id="status-text">Microfone desligado</span>
-            <span id="last-command" class="last-command" style="display: none;">Aguardando...</span>
-        </div>
-        <button id="mic-toggle-btn" class="mic-btn" onclick="toggleMicrophone()">
-            <i class="fa-solid fa-microphone"></i> <span id="btn-text">Ativar Voz</span>
-        </button>
-    </div>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2026 EcoRio Paraná — Projeto de Conscientização Ambiental & Acessibilidade Web</p>
+    </footer>
 
-    <!-- JavaScript External -->
     <script src="script.js"></script>
 </body>
 </html>
